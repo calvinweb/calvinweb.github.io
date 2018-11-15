@@ -106,41 +106,15 @@
           
         </script>
 
-        <script id="tpl-duoshuo" type="text/template">
-        
-            <h3>
-                最新评论
-            </h3>
-            <ul id="ds-recent-comments" data-show-title="0" data-excerpt-length="70"
-            data-num-items="10">
-                {{#messages}}
-                <li class="ds-comment ds-show-avatars" data-post-id="{{data-post-id}}">
-                    <div class="ds-avatar">
-                        <a rel="nofollow author" target="_blank" href="{{author_url}}"
-                        title="{{author_name}}">
-                            <img src="{{avatar_url}}" alt="{{author_name}}"
-                            style="width:32px;height:32px">
-                        </a>
-                    </div>
-                    <div class="ds-meta">
-                        <a rel="nofollow author" target="_blank" href="{{author_url}}">
-                            {{author_name}}
-                        </a>
-                        <span class="ds-time" datetime="{{created_at}}" title="">
-                             
-                        </span>
-                    </div>
-                    <a class="ds-excerpt" title="Redirect 中的评论" href="#show/{{thread_key}}">
-                        {{message}}
-                    </a>
-                </li>
-                 {{/messages}}
-              
-            </ul>
-        
-        </script>
-
-
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cytV3SICi'; 
+var conf = 'prod_e83c8023f13654c015868f3ecd37cdfc'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
         
        
      
