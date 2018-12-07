@@ -147,19 +147,7 @@ $(function() {
 
 
 
-    blog.views.Article = Backbone.View.extend({
-        initialize: function(options) {
-            var that = this;
-            this.article = options.article;
-
-            _.bindAll(this, 'render');
-            $.get('post/' + this.article + '.md', function(data) {
-                that.model = data;
-                that.render();
-            });
-
-        },
-        render: function() {
+            render: function() {
             if(!this.model) return this;
             var html = blog.helper.markdown.makeHtml(this.model);
 
