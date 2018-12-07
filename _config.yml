@@ -1,8 +1,8 @@
-theme: jekyll-theme-cayman
+ theme: jekyll-theme-cayman
 
 comment:
-  enable: false      # 是否开启配置
-  owner: jangdelong  # 你的 github 账户名
-  repo: blog_comments # github repository
-  client_id: xxxxxxxxxx # github application client id
-  client_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # github application secret
+  enable: true      # 是否开启配置
+  owner: calvinweb  # 你的 github 账户名
+  repo: calvinweb.gtihub.io # github repository
+  client_id: c278a09d02a36735 # github application client id
+  client_secret: 40b04365a1a28919a99ef928dae81338eef093ca
