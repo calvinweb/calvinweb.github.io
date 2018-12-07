@@ -62,7 +62,18 @@
                         <div class="row-fluid article-content">
                         </div>
                         <div class="row-fluid pagebar">
-                        <!--PC和WAP自适应版-->
+                        <!--PC和WAP自适应版--> <div id="comments" class="comment">
+ </div>
+ <script>
+ JELON.Comment({
+   container: 'comments', // 评论框容器id或对象，留空是默认为 comments 
+   label: '<%- post.slug %>' || '<%- post.path %>',  // 文章标签
+   owner: '<%- theme.comment.owner %>', // GitHub application 创建者
+   repo: 'calvinweb.github.io', // issue 所在仓库名
+   clientId: '<%- theme.comment.client_id %>', // GitHub application client_id
+   clientSecret: '<%- theme.comment.client_secret %>' // GitHub application client_secret
+ });
+ </script>
 
                         </div>
                     </div>
