@@ -3,7 +3,7 @@
 		"type": "App"
 	},
 	"project": {
-		"shadows": false,
+		"shadows": true,
 		"vr": true
 	},
 	"camera": {
@@ -13,17 +13,17 @@
 			"generator": "Object3D.toJSON"
 		},
 		"object": {
-			"uuid": "AFBD5934-0E04-421E-920C-73531322D13D",
+			"uuid": "324E385A-FDC8-4153-A2FB-75FEB984C629",
 			"type": "PerspectiveCamera",
 			"name": "Camera",
 			"layers": 1,
-			"matrix": [-0.982229,0,0.187686,0,0.106871,0.822049,0.559297,0,-0.154287,0.569416,-0.807441,0,-1.545164,5.702626,-8.086413,1],
+			"matrix": [-0.274655,0,-0.961543,0,-0.401534,0.908634,0.114694,0,0.873691,0.417594,-0.249561,0,32.654101,15.607524,-9.327326,1],
 			"fov": 50,
 			"zoom": 1,
 			"near": 0.1,
 			"far": 100000,
 			"focus": 10,
-			"aspect": 1.716586,
+			"aspect": 1.727715,
 			"filmGauge": 35,
 			"filmOffset": 0
 		}
@@ -42,6 +42,16 @@
 				"height": 100,
 				"widthSegments": 1,
 				"heightSegments": 1
+			},
+			{
+				"uuid": "7D6921ED-4C3E-4ABC-B506-E08D349F650A",
+				"type": "BoxBufferGeometry",
+				"width": 1,
+				"height": 1,
+				"depth": 1,
+				"widthSegments": 1,
+				"heightSegments": 1,
+				"depthSegments": 1
 			}],
 		"materials": [
 			{
@@ -66,11 +76,12 @@
 				"depthWrite": true
 			},
 			{
-				"uuid": "BE0872F7-7739-423D-A0AC-2D678737685E",
-				"type": "SpriteMaterial",
-				"color": 16777215,
-				"sizeAttenuation": true,
-				"transparent": true,
+				"uuid": "00C9D8E6-43D7-47B2-8713-E64B491B6537",
+				"type": "MeshPhongMaterial",
+				"color": 15461355,
+				"emissive": 16777215,
+				"specular": 1118481,
+				"shininess": 30,
 				"depthFunc": 3,
 				"depthTest": true,
 				"depthWrite": true
@@ -95,8 +106,9 @@
 					"uuid": "0A3CB873-07E6-4EEB-830B-68192504111B",
 					"type": "Sprite",
 					"name": "Particle",
+					"visible": false,
 					"layers": 1,
-					"matrix": [0.04,0,0,0,0,0.04,0,0,0,0,0.04,0,0,0,0,1],
+					"matrix": [0.04,0,0,0,0,0.04,0,0,0,0,0.04,0,1.42114,0,0,1],
 					"material": "F5361474-F5F1-412F-8D99-3699B868092D"
 				},
 				{
@@ -104,7 +116,7 @@
 					"type": "PointLight",
 					"name": "PointLight",
 					"layers": 1,
-					"matrix": [-0.329444,0.81945,0.469008,0,0.878055,0.083283,0.471258,0,0.347112,0.567067,-0.746959,0,0,1.183,0,1],
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,1.183,0,1],
 					"color": 16777215,
 					"intensity": 1,
 					"distance": 0,
@@ -126,21 +138,28 @@
 					}
 				},
 				{
-					"uuid": "A9ED552A-03B3-4FF9-87D3-6AD89BAC2D5D",
-					"type": "AmbientLight",
-					"name": "AmbientLight",
+					"uuid": "14D86C83-6E08-42AE-A828-B043477781CA",
+					"type": "PerspectiveCamera",
+					"name": "PerspectiveCamera",
 					"layers": 1,
-					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,-0.108502,2.863697,-0.00832,1],
-					"color": 2236962,
-					"intensity": 1
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,2.990967,-2.363083,1],
+					"fov": 50,
+					"zoom": 1,
+					"near": 0.1,
+					"far": 2000,
+					"focus": 10,
+					"aspect": 1.727715,
+					"filmGauge": 35,
+					"filmOffset": 0
 				},
 				{
-					"uuid": "36563C66-A8A1-4752-B354-F0F3DC170874",
-					"type": "Sprite",
-					"name": "Sprite",
+					"uuid": "5C466AB0-96B5-4CC7-9131-350880BCF085",
+					"type": "Mesh",
+					"name": "S",
 					"layers": 1,
-					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
-					"material": "BE0872F7-7739-423D-A0AC-2D678737685E"
+					"matrix": [0.05,0,0,0,0,0.05,0,0,0,0,0.05,0,0,0,0,1],
+					"geometry": "7D6921ED-4C3E-4ABC-B506-E08D349F650A",
+					"material": "00C9D8E6-43D7-47B2-8713-E64B491B6537"
 				}],
 			"background": 2171689,
 			"fog": {
@@ -155,7 +174,12 @@
 		"3741222A-BD8F-401C-A5D2-5A907E891896": [
 			{
 				"name": "Fountain",
-				"source": "var original = this.getObjectByName( 'Particle' );\n\nvar particles = [];\n\nfor ( var i = 0; i < 100; i ++ ) {\n\n\tvar particle = original.clone();\n\tparticle.userData.velocity = new THREE.Vector3();\n\tthis.add( particle );\n\n\tparticles.push( particle );\n\n}\n\nfunction update( event ) {\n\t\n\tvar particle = particles.shift();\n\tparticles.push( particle );\n\t\t\n\tvar velocity = particle.userData.velocity;\n\tvelocity.x = Math.random() * 0.1 - 0.05;\n\tvelocity.y = Math.random() * 0.1 + 0.1;\n\tvelocity.z = Math.random() * 0.1 - 0.05;\n\n\tfor ( var i = 0; i < particles.length; i ++ ) {\n\n\t\tvar particle = particles[ i ];\n\n\t\tvar velocity = particle.userData.velocity;\n\n\t\tvelocity.y -= 0.0098;\n\n\t\tparticle.position.add( velocity );\n\n\t\tif ( particle.position.y < 0 ) {\n\n\t\t\tparticle.position.y = 0;\n\n\t\t\tvelocity.y = - velocity.y;\n\t\t\tvelocity.multiplyScalar( 0.6 );\n\n\t\t}\n\n\t}\n\n}"
+				"source": "//Particle\nvar original = this.getObjectByName( 'S' );\n\nvar particles = [];\n\nfor ( var i = 0; i < 100; i ++ ) {\n\n\tvar particle = original.clone();\n\tparticle.userData.velocity = new THREE.Vector3();\n\tthis.add( particle );\n\n\tparticles.push( particle );\n\n}\n\nfunction update( event ) {\n\t\n\tvar particle = particles.shift();\n\tparticles.push( particle );\n\t\t\n\tvar velocity = particle.userData.velocity;\n\tvelocity.x = Math.random() * 0.1 - 0.05;\n\tvelocity.y = Math.random() * 0.1 + 0.1;\n\tvelocity.z = Math.random() * 0.1 - 0.05;\n\n\tfor ( var i = 0; i < particles.length; i ++ ) {\n\n\t\tvar particle = particles[ i ];\n\n\t\tvar velocity = particle.userData.velocity;\n\n\t\tvelocity.y -= 0.0098;\n\n\t\tparticle.position.add( velocity );\n\n\t\tif ( particle.position.y < 0 ) {\n\n\t\t\tparticle.position.y = 0;\n\n\t\t\tvelocity.y = - velocity.y;\n\t\t\tvelocity.multiplyScalar( 0.6 );\n\n\t\t}\n\n\t}\n\t\tvar particle = original.clone();\n\tparticle.userData.velocity = new THREE.Vector3();\n\tthis.add( particle );\n\n\tparticles.push( particle );\n\t \n\t                //this.remove(particles[1]);\n\n}"
+			}],
+		"14D86C83-6E08-42AE-A828-B043477781CA": [
+			{
+				"name": "",
+				"source": "player.setCamera(this)\nfunction update( event ) {\n\tvar time = event.time * 0.001;\n\n\tthis.position.x = Math.sin( time ) * 4;\n\tthis.position.z = Math.cos( time ) * 4;\n\tthis.lookAt( scene.position );\n}"
 			}]
 	}
 }
